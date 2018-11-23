@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinCrossApp.Views.UserView" BackgroundColor="Aqua">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="entryUserName" Placeholder="input your username"></Entry>
+            <Entry x:Name="entryPasswordName" IsPassword="True" Placeholder="input your password"></Entry>
+            <Entry x:Name="entryEmail"  Placeholder="input your email"></Entry>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button x:Name="btnSubmit" Text="Submit" Clicked="btnSubmit_Clicked"></Button>
+                <Button x:Name="btnShow" Text="Submit" Clicked="btnShow_Clicked"></Button>
+            </StackLayout>
+            <ListView x:Name="dataListUser">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding UserName}" Detail="{Binding UserEmail}"></TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
